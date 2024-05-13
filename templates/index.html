@@ -32,7 +32,7 @@
 
       <tr>
         <th scope="row">{{ k }}</th>
-        <td><a href={{ url_for("post", post_id=k) }}>{{ post["title"] }}</a></td>
+        <td><a class="title" href={{ url_for("post", post_id=k) }}>{{ post["title"] }}</a></td>
         <td>{{ post["libraries"] }}</td>
         <td class="date-column">{{ post["date"] }}</td>
       </tr>
