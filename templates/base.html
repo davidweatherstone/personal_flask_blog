@@ -1,37 +1,64 @@
 {{ bootstrap.load_css() }}
 
 <style>
-  body {
-    font-family: "Lucida Console", "Courier New", monospace;
-  }
   .custom-margin-top {
-      margin-top: 80px;
+    margin-top: 80px;
+  }
+
+  .custom-margin-top-post {
+     margin-top: 60px;
   }
   .custom-margin-top-table {
-      margin-top: 40px;
+      margin-top: 20px;
   }
+
+  body {
+    font-family: "Lucida Console", "Courier New", monospace;
+    font-size: 16px;
+  }
+
   a {
     font-weight: bold;
     color: black;
     text-decoration-line: none;
   }
+
   a:hover {
-    text-decoration-line:
+    text-decoration-line: underline;
   }
+
   .date-column {
     white-space: nowrap;
  }
+
+  table {
+    font-size: 14px;
+ }
+ 
+  .item {
+    color: white;
+ }
+ 
+ .contact-item {
+    color: white;
+    text-align: right;
+ }
+
 </style>
 
-<meta name="viewport" content="width=device-width, initial-scale=0.8">
-
+<!-- Nav Bar -->
 <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
     <div class="container-fluid">
       <a class="navbar-brand" href="{{ url_for("home") }}">David Weatherstone</a>
         <ul class="navbar-nav me-auto mb-2 mb-md-0">
           <li class="nav-item">
-            <a style="color:white" href="{{ url_for("home") }}">Home</a>
+            <a class="item" href="{{ url_for("home") }}">Home</a>
           </li>
         </ul>
+        <li>
+          <a class="contact-item" href="https://github.com/davidweatherstone/Data-Analyst-Portfolio">GitHub</a>
+          <a class="contact-item" href="https://www.linkedin.com/in/davidweatherstone">LinkedIn</a>
+        </li>
       </div>
   </nav>
+
