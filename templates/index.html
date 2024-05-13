@@ -23,7 +23,7 @@
         <th scope="k">#</th>
         <th scope="col">Title</th>
         <th scope="col">Libraries</th>
-        <th scope="col" style="max-width:140px">Date</th>
+        <th scope="col" class="date-column">Date</th>
       </tr>
     </thead>
     <tbody>
@@ -34,7 +34,7 @@
         <th scope="row">{{ k }}</th>
         <td><a href={{ url_for("post", post_id=k) }}>{{ post["title"] }}</a></td>
         <td>{{ post["libraries"] }}</td>
-        <td style="max-width:140px">{{ post["date"] }}</td>
+        <td class="date-column">{{ post["date"] }}</td>
       </tr>
 
     {% endfor %}
