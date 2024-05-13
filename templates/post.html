@@ -1,0 +1,37 @@
+{% include "base.html" %}
+
+<style>
+    .custom-margin-top {
+        margin-top: 80px;
+    }
+    .custom-margin-top-table {
+        margin-top: 40px;
+    }
+</style>
+
+<div class="container custom-margin-top">
+    <div class="row justify-content-center">
+    <div class="col-md-8">
+
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Title</th>
+        <th scope="col">Libraries</th>
+        <th scope="col">Date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{ post["title"] }}</td>
+        <td>{{ post["libraries"] }}</td>
+        <td style="max-width:140px">{{ post["date"] }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</div>
+</div>
+
+{% include "/content/" + post["href"] %}
+

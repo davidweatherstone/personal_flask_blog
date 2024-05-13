@@ -1,0 +1,48 @@
+{% include "base.html" %}
+
+<!-- Page Header-->
+<header class="masthead">
+  <div class="container position-relative px-4 px-lg-5 custom-margin-top">
+    <div class="row gx-4 gx-lg-5 justify-content-center">
+      <div class="col-md-4 col-lg-6 col-xl-8">
+        <div class="site-heading text-center">
+          <span class="subheading">This content is mostly just me playing around with features of different data-focused Python libraries. Posts will be mostly Jupyter Notebooks.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+<div class="container custom-margin-top-table">
+    <div class="row justify-content-center">
+    <div class="col-md-10">
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="k">#</th>
+        <th scope="col">Title</th>
+        <th scope="col">Libraries</th>
+        <th scope="col" style="max-width:140px">Date</th>
+      </tr>
+    </thead>
+    <tbody>
+
+    {% for k, post in posts.items() %}
+
+      <tr>
+        <th scope="row">{{ k }}</th>
+        <td><a href={{ url_for("post", post_id=k) }}>{{ post["title"] }}</a></td>
+        <td>{{ post["libraries"] }}</td>
+        <td style="max-width:140px">{{ post["date"] }}</td>
+      </tr>
+
+    {% endfor %}
+
+    </tbody>
+  </table>
+</div>
+</div>
+</div>
+
+
