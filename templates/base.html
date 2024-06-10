@@ -36,20 +36,9 @@
     font-size: 14px;
  }
  
-  .item {
-    font-size: 12px;
+  .menu_link {
     color: white;
-    text-decoration-line: none;
- }
-
-  .item:hover {
-    color: black;
-    text-decoration-line: none; 
- }
- 
-  .contact {
-    color: white;
-    font-size: 12px;
+    font-size: 16px;
     text-align: right;
     text-decoration-line: none;
  }
@@ -68,13 +57,18 @@
     <div class="container-fluid">
       <a class="navbar-brand" href="{{ url_for("home") }}">David Weatherstone</a>
         <ul class="navbar-nav me-auto mb-2 mb-md-0">
+          {% if active_page != "index" %}
           <li>
-            <a class="item" href="{{ url_for("home") }}">Home</a>
+            <a class="menu_link" href="{{ url_for("home") }}">Home</a>
           </li>
+          {% endif %}
         </ul>
+        {% if active_page == "index" %}
+        <li><input id="search" placeholder="Search" /></li>
+        {% endif %}
         <li>
-          <a class="contact" href="https://github.com/davidweatherstone/Data-Analyst-Portfolio">GitHub</a>
-          <a class="contact" href="https://www.linkedin.com/in/davidweatherstone">LinkedIn</a>
+          <a class="menu_link" href="https://github.com/davidweatherstone/Data-Analyst-Portfolio">GitHub</a>
+          <a class="menu_link" href="https://www.linkedin.com/in/davidweatherstone">LinkedIn</a>
         </li>
       </div>
   </nav>

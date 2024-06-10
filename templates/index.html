@@ -1,3 +1,4 @@
+{% set active_page = "index" %}
 {% include "base.html" %}
 
 <!-- Page Header-->
@@ -12,7 +13,6 @@
     </div>
   </div>
 </header>
-
 
 <div class="container custom-margin-top-table">
     <div class="row justify-content-center">
@@ -41,6 +41,36 @@
 
     </tbody>
   </table>
+  <script>
+    const searchBox = document.querySelector("#search");
+
+    searchBox.addEventListener("input", (event) => {
+      const searchTerm = event.target.value;
+      filterTable(searchTerm);
+    })
+
+    const filterTable = (searchTerm) => {
+      filter = searchTerm.toUpperCase();
+      table = document.querySelector("tr");
+      tr = document.querySelectorAll("tr");
+      
+      for (i = 0; i < tr.length; i++) {
+        tdTitle = tr[i].getElementsByTagName("td")[0];
+        tdLibraries = tr[i].getElementsByTagName("td")[1];
+        if (tdTitle || tdLibraries) {
+          txtValueTitle = tdTitle ? tdTitle.textContent || tdTitle.innerText : "";
+          txtValueLibraries = tdLibraries ? tdLibraries.textContent || tdLibraries.innerText : "";
+          if (txtValueTitle.toUpperCase().indexOf(filter) > -1 || txtValueLibraries.toUpperCase().indexOf(filter) > -1) {
+            tr[i].style.display = "";
+          } else {
+            tr[i].style.display = "none";
+          }
+        }
+      }
+    }
+
+  </script>
 </div>
 </div>
 </div>
+
